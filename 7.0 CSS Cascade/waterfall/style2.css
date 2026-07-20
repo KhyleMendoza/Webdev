@@ -1,0 +1,25 @@
+h1 {
+  color: blue;
+}
+/* second last priority ang element */
+
+#first-id {
+  color: pink;
+}
+/* fifth to the last priority ang id */
+
+h1[draggable] {
+  color: aqua;
+}
+/* fourth to the last priority ang attributes */
+
+
+.first-class {
+  color: green;
+}
+/* third to the last priority ang class */
+
+h1 {
+    color: rgb(236, 71, 84) !important;
+}
+/* overrides the whole priority using !important */
