@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 200dvh;
+        }
+
+        .box {
+            background-color: green;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .top-right {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(16, 24, 58);
+            position: sticky;
+            top: 0;
+            right: 0;
+            margin-left: auto;
+        }
+
+        .warning {
+            height: 100px;
+            width: 25px;
+            background-color: red;
+            position: absolute;
+            top: 190px;
+            left: 103px;
+        }
+
+        .warning-dot {
+            height: 30px;
+            width: 30px;
+            background-color: red;
+            border-radius: 100%;
+            position: absolute;
+            top: 320px;
+            left: 100px;
+        }
+
+        .triangle {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 210px;
+            left: 200px;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 120px solid #ff5100;
+        }
+
+        .triangle-inside {
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-color: white;
+            position: relative;
+            top: 50px;
+            left: -25px;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .circle:nth-of-type(1) {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 100%;
+            /* position: static; */
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            position: relative;
+            left: -50px;
+            top: 300px;
+        }
+        .circle:nth-of-type(2) {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 100%;
+            /* position: static; */
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            position: relative;
+            left: 50px;
+            top: 300px;
+        }
+
+        .pyramid {
+            position: absolute;
+            top: 200px;
+            right: 300px;
+            border-top: 50px solid #f58300;
+            border-left: 50px solid #767723;
+            border-right: 50px solid #ffc402;
+            border-bottom: 100px solid #ff5100;
+        }
+
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(3, 159, 187);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(47, 146, 163);
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .box3 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(128, 156, 161);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top-right"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur iusto culpa possimus, dolore dolores voluptatem odit doloremque illo? Eos pariatur corrupti fugit doloremque dolorem voluptatibus reprehenderit obcaecati animi quisquam!</p>
+        <div class="warning"></div>
+        <div class="warning-dot"></div>
+        <div class="triangle"><div class="triangle-inside"></div></div>
+        
+        <div class="bottom">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        
+        <div class="pyramid"></div>
+
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
