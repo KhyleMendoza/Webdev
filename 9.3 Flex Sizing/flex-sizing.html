@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            height: 100px;
+            padding: 20px;
+            margin: 0 auto;
+            gap: 20px;
+            background-color: gray;
+        }
+
+        .container > * {
+            flex: 1;
+            background-color: skyblue;
+            border: 2px solid white;
+        }
+
+        .item1 {
+            min-width: 50px;
+            max-width: 200px;
+        }
+
+        .item2 {
+            min-width: 200px;
+            max-width: 200px;
+        }
+
+        .item3 {
+            min-width: 400px;
+            max-width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">item 1: 200px</div>
+        <div class="item2">item 2: 200px</div>
+        <div class="item3">item 3: 400px</div>
+    </div>
+</body>
+</html>
