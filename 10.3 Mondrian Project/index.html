@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+
+    body {
+      height: 100dvh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 320px 1fr 50px;
+      grid-template-rows: 414px 1fr 40px;
+      height: 748px;
+      width: 748px;
+      background-color: #F0F1EC;
+    }
+
+    .red {
+      background-color: #E72F24;
+      border-bottom: 9px solid black;
+      border-right: 9px solid black;
+    }
+
+    .gap {
+      border-bottom: 9px solid black;
+      grid-column: span 2;
+    }
+
+    .gap2 {
+      border-right: 9px solid black;
+    }
+
+    .gap3 {
+      border-right: 9px solid black;
+    }
+
+    .blue {
+      background-color: #004592;
+      height: 130px;
+      border-bottom: 20px solid black;
+    }
+    
+    .gap4 {
+      border-top: 9px solid black;
+      border-right: 9px solid black;
+    }
+
+    .yellow-black {
+      border-top: 9px solid black;
+      border-right: 9px solid black;
+      display: flex;
+    }
+
+    .yellow {
+      width: 50%;
+      background-color: #F9D01E;
+      border-right: 9px solid black;
+    }
+
+    .black{
+      background-color: #232629;
+      width: 50%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+      <div class="red"></div>
+      <div class="gap"></div>
+      <div class="gap2"></div>
+      <div class="gap3"></div>
+      <div class="blue"></div>
+      <div class="gap4"></div>
+      <div class="yellow-black">
+        <div class="yellow"></div>
+        <div class="black"></div>
+      </div>
+  </div>
+</body>
+
+</html>
