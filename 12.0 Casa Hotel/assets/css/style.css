@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo > img {
+    height: 30px;
+}
+
+.logo > a {
+    font-size: 20px;
+    color: #0F5238;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links > a {
+    color: #404943;
+    font-size: 18px;
+}
+
+.links > a.active {
+    color: #0F5238;
+    border-bottom: 2px solid #0F5238;
+}
+
+.sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sign > a {
+    color: #404943;
+    font-size: 18px;
+}
+
+.sign > button {
+    background-color: #0F5238;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hero-section {
+    padding-top: 10px;
+    height: 100dvh;
+    background-position: cover;
+    background-image: url("../images/Hero-bg.png");
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero > h1 {
+    color: #ffffff;
+    font-size: 60px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.book {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.book > .location {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    border-right: 1px solid #BFC9C1;
+}
+
+.book > .location > .location-box {
+    display: flex;
+    gap: 10px;
+}
+
+.book > .location > .location-box > input {
+    border: none;
+}
+
+.book > .check-in {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    border-right: 1px solid #BFC9C1;
+}
+
+.book > .check-in > input {
+    border: none;
+    width: 100px;
+    color: #404943;
+}
+
+.book > .check-out {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    border-right: 1px solid #BFC9C1;
+}
+
+.book > .check-out > input {
+    border: none;
+    width: 100px;
+    color: #404943;
+}
+
+.book > .person {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.book > .person > .person-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book > .person > .person-box > input {
+    border: none;
+}
+
+.book > .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: .5;
+}
+
+.book > .search > button {
+    padding: 15px 30px;
+    background-color: #0F5238;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+}
