@@ -52,7 +52,23 @@
 // Exercise 2 - Create a prompt where in it counts how many characters they input and how many characters remaining
 // max of 140 characters example: You have written 182 characters, you have -42 characters left.
 // // Code:
+// // V1:
 // blog = prompt("Write a blog:")
-// console.log(`You have written ${blog.length}, you have ${ 140 - blog.length} left.`)
+// alert(`You have written ${blog.length}, you have ${ 140 - blog.length} left.`)
+// alert("Blog: " + blog.slice(0, 140))
+// V2:
+// blog = prompt("Write a blog:")
+// blogLength = blog.length;
+// blogMaxLength = 140;
+// alert(`You have written ${blogLength}, you have ${ blogMaxLength - blogLength} left.`)
+// alert("Blog: " + blog.slice(0, blogMaxLength))
 // //140 character - //oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas asdo
 // //192 character - //oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas asdo dasbijadsbio asdioadshioads aidsooadsiaab
+
+// //Slice
+// var name = "Khyle";
+// console.log(name.slice(0, 1));
+// console.log(name.slice(2,5))
+// blog = "oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas here dasbijadsbio asdioadshioads aidsooadsiaab"
+// console.log(blog.slice(0,140))
+
