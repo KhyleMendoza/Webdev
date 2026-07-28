@@ -71,11 +71,12 @@
 // getMilk(3, 5);
 
 // Exercise 7 - Life In Weeks (90 yrs old max age) example: 56 yrs old Expected Output: You have 12410 days, 1768 weeks, and 408 months left.
-function lifeInWeeks(age) {
-    var yearsRemaining = 90 - age;
-    var days = (yearsRemaining * 365);
-    var weeks = yearsRemaining * 52;
-    var month = yearsRemaining * 12;
-    console.log(`You have ${days} days, ${weeks} weeks, and ${month} months left.`)
-}
-lifeInWeeks(56)
+// function lifeInWeeks(age) {
+//     var yearsRemaining = 90 - age;
+//     var days = (yearsRemaining * 365);
+//     var weeks = yearsRemaining * 52;
+//     var month = yearsRemaining * 12;
+//     console.log(`You have ${days} days, ${weeks} weeks, and ${month} months left.`)
+// }
+// lifeInWeeks(56)
+
