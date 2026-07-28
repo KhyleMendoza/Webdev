@@ -1,0 +1,71 @@
+// function hello() {
+//     console.log("Hello World!");
+// }
+// hello();
+
+// function greet(name) {
+//     console.log(`Hello, ${name}!`);
+// }
+// var name = prompt("what is your name?");
+// var properName = name.slice(0, 1).toUpperCase() + name.slice(1, name.length).toLowerCase()
+// // console.log(properName)
+// greet(properName);
+
+// Exercise 6 - Buy
+// Version 1:
+// function getMilk(money) {   
+//   console.log("leaveHouse");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   var numberOfBottles = Math.floor(money / 1.5);
+//   console.log(`Bought ${numberOfBottles} bottles of milk!`)
+//   console.log(`Money left: ${money%1.5}`)
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("enterHouse");
+// }
+// getMilk(5)
+
+// Version 2: buy milk with check if can be afford and deduct money
+// function getMilk(bottles, money) {   
+//   console.log("leaveHouse");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   console.log(`Karel has money: ${money}`)
+//   var cost = bottles * 1.5;
+//   if (money >= cost) {
+//     console.log(`bought ${bottles} bottles of Milk and paid: $${cost}.`);
+//     money = money - cost;
+//     console.log(`Money: ${money}`);
+//   } else {
+//     console.log("Not enough money!")
+//   }
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("enterHouse");
+// }
+// getMilk(3, 5);
