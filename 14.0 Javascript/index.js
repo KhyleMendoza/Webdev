@@ -65,10 +65,73 @@
 // //140 character - //oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas asdo
 // //192 character - //oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas asdo dasbijadsbio asdioadshioads aidsooadsiaab
 
-// //Slice
-// var name = "Khyle";
-// console.log(name.slice(0, 1));
-// console.log(name.slice(2,5))
-// blog = "oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas here dasbijadsbio asdioadshioads aidsooadsiaab"
-// console.log(blog.slice(0,140))
+// var name = "khyle";
 
+// //Slice
+// console.log(name.slice(0, 1));
+// console.log(name.slice(2,5));
+// blog = "oadsjpoadjsopdas daopsjdasop sdaopdasj dasopjadsop dasopdjasopads dasopjadsop adsopdjasopdas adsopjadsopdas aadsopjopdas saodpjdasopdas here dasbijadsbio asdioadshioads aidsooadsiaab";
+// console.log(blog.slice(0,140));
+
+// // Uppercase Lowercase
+// name = prompt("What is your name?")
+// name = name.toUpperCase();
+// console.log(`Hello, ${name}`);
+// name = name.toLowerCase();
+// console.log(`Hello, ${name}`);
+
+// Exercise 3 - uppercase the first letter of name and lowercase the other
+// name = prompt("What is your name?");
+// propername = name.slice(0,1).toUpperCase() + name.slice(1, name.length).toLowerCase();
+// console.log(`Hello, ${propername}`);
+
+// console.log(2+5);
+// console.log(3-7);
+// console.log(3*3);
+// console.log(6/4);
+// console.log(6%4);
+// console.log(12%8);
+// console.log(3 + (5 * 2));
+// console.log((3 + 5) * 2);
+
+// Exercise 4 - find if the number is odd or even
+// var answer = prompt("Enter a number");
+// answer = answer % 2;
+// if (answer == 0) {
+//     console.log("Even");
+// } else {
+//     console.log("odd");
+// }
+
+// Exercise 5 - Dog Age to Human Age
+// var dogAge = prompt("How old is your dog?");
+// var humanAge = ((dogAge - 2) * 4) + 21;
+// alert(`Your dog age is ${dogAge} to human age is ${humanAge}`);
+
+//Increment and decrement
+// var x = 5;
+// console.log(x)
+// x++;
+// console.log(x)
+// x = ++x;
+// console.log(x);
+// x = x + 1;
+// console.log(x);
+// x+=1;
+// console.log(x)
+// ++x;
+// console.log(x);
+// x--;
+// console.log(x);
+// x = --x;
+// console.log(x);
+// x-=1;
+// console.log(x);
+// --x;
+// console.log(x);
+
+// var x = 3;
+// var y = x++;
+// y+=1;
+// console.log(y)
+//4
