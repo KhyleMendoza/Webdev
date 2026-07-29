@@ -18,7 +18,7 @@ calcBtn.addEventListener("click", function() {
         return;
     } else {
         error.style.display = "none";
-        var bmi = bmiCalculator(65, 1.8)
+        // var bmi = bmiCalculator(65, 1.8)
         var bmi = bmiCalculator(weight, height)
         bmiV.innerText = bmi.toFixed(2);
         bmiP[0].style.display = "flex";
