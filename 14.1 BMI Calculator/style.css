@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 20px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: #215E61;
+}
+
+.container h1 {
+    color: white;
+    text-align: center;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.container label {
+    color: white;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border: 1px solid rgb(56, 56, 56);
+    padding-left: 10px;
+}
+
+.container input:focus {
+    outline: none;
+    border: 1.5px solid black;
+}
+
+.container button {
+    width: min-content;
+    margin: 0 auto;
+    padding: 12px 25px;
+    background-color: #FE7F2D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container .bmi {
+    background-color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.container .bmi > p {
+    margin: 0;
+    margin-left: 10px;
+    color: rgb(6, 7, 6);
+}
+
+#error {
+    display: none;
+    background-color: #e92c1e;
+    height: 30px;
+    color: rgb(250, 248, 248);
+    padding: 5px;
+}
