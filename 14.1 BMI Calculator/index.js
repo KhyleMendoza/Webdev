@@ -30,7 +30,7 @@ calcBtn.addEventListener("click", function() {
         } else if (bmi > 24.9) {
             var interpretation = "you are overweight";
         }
-        console.log(interpretation)
+        // console.log(interpretation)
         let result = document.getElementById("result");
         result.innerText = interpretation;
     }
