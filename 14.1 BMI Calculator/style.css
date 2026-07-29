@@ -63,7 +63,7 @@ body {
 
 .container .bmi {
     background-color: white;
-    height: 30px;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     display: none;

@@ -22,5 +22,16 @@ calcBtn.addEventListener("click", function() {
         var bmi = bmiCalculator(weight, height)
         bmiV.innerText = bmi.toFixed(2);
         bmiP[0].style.display = "flex";
+
+        if (bmi < 18.5) {
+            var interpretation = "you are underweight";
+        } else if (bmi >= 18.5 && bmi <=24.9) {
+            var interpretation = "you are normal weight";
+        } else if (bmi > 24.9) {
+            var interpretation = "you are overweight";
+        }
+        console.log(interpretation)
+        let result = document.getElementById("result");
+        result.innerText = interpretation;
     }
 });
