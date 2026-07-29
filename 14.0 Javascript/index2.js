@@ -137,7 +137,7 @@ function calcBottles(startingMoney, costPerBottle) {
     }
 }
 var [change, milk, bought] = getMilk(4)
-if (bought == true) {
+if (bought === true) {
     console.log(`Milk: ${milk} Money left: ${change}`)
 } else {
     console.log("Failed to purchase")
