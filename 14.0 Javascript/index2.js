@@ -71,6 +71,38 @@
 // getMilk(3, 5);
 
 // Version 3:
+// function getMilk(money) {   
+//   console.log("leaveHouse");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveUp");
+//   console.log("moveRight");
+//   console.log("moveRight");
+//   var numberOfBottles = Math.floor(money / 1.5);
+//   console.log(`Bought ${numberOfBottles} bottles of milk!`);
+//   var bought = true;
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveDown");
+//   console.log("moveLeft");
+//   console.log("moveLeft");
+//   console.log("enterHouse");
+//   return [money % 1.5, numberOfBottles, bought];
+// }
+// var [change, milk, bought] = getMilk(5)
+// if (bought == true) {
+//     console.log(`Milk: ${milk} Money left: ${change}`)
+// } else {
+//     console.log("Failed to purchase")
+// }
+
+// Version 4:
 function getMilk(money) {   
   console.log("leaveHouse");
   console.log("moveRight");
@@ -81,9 +113,8 @@ function getMilk(money) {
   console.log("moveUp");
   console.log("moveRight");
   console.log("moveRight");
-  var numberOfBottles = Math.floor(money / 1.5);
+  var [numberOfBottles, bought] = calcBottles(money, 1.5)
   console.log(`Bought ${numberOfBottles} bottles of milk!`);
-  var bought = true;
   console.log("moveLeft");
   console.log("moveLeft");
   console.log("moveDown");
@@ -95,7 +126,17 @@ function getMilk(money) {
   console.log("enterHouse");
   return [money % 1.5, numberOfBottles, bought];
 }
-var [change, milk, bought] = getMilk(5)
+function calcBottles(startingMoney, costPerBottle) {
+    if (startingMoney >= costPerBottle) {
+        var numberOfBottles = Math.floor(startingMoney / costPerBottle)
+        var bought = true;
+        return [numberOfBottles, bought];
+    } else {
+        var bought = false
+        return [0, bought];
+    }
+}
+var [change, milk, bought] = getMilk(4)
 if (bought == true) {
     console.log(`Milk: ${milk} Money left: ${change}`)
 } else {
