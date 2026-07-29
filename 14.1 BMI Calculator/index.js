@@ -15,7 +15,6 @@ calcBtn.addEventListener("click", function() {
         error.style.display = "block";
         bmiP[0].style.display = "none";
 
-        console.log("a")
         return;
     } else {
         error.style.display = "none";
