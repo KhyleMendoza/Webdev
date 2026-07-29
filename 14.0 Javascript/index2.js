@@ -113,7 +113,7 @@ function getMilk(money) {
   console.log("moveUp");
   console.log("moveRight");
   console.log("moveRight");
-  var [numberOfBottles, bought] = calcBottles(money, 1.5)
+  var [numberOfBottles, change, bought] = buyBottles(money, 1.5)
   console.log(`Bought ${numberOfBottles} bottles of milk!`);
   console.log("moveLeft");
   console.log("moveLeft");
@@ -124,23 +124,25 @@ function getMilk(money) {
   console.log("moveLeft");
   console.log("moveLeft");
   console.log("enterHouse");
-  return [money % 1.5, numberOfBottles, bought];
+  return [change, numberOfBottles, bought];
 }
-function calcBottles(startingMoney, costPerBottle) {
+function buyBottles(startingMoney, costPerBottle) {
     if (startingMoney >= costPerBottle) {
         var numberOfBottles = Math.floor(startingMoney / costPerBottle)
+        var change = startingMoney % costPerBottle;
         var bought = true;
-        return [numberOfBottles, bought];
+        return [numberOfBottles, change, bought];
     } else {
         var bought = false
-        return [0, bought];
+        return [0, startingMoney, bought];
     }
 }
-var [change, milk, bought] = getMilk(4)
+var [change, milk, bought] = getMilk(5)
 if (bought === true) {
     console.log(`Milk: ${milk} Money left: ${change}`)
 } else {
     console.log("Failed to purchase")
+    console.log(`Money left: ${change}`)
 }
 
 // Exercise 7 - Life In Weeks (90 yrs old max age) example: 56 yrs old Expected Output: You have 12410 days, 1768 weeks, and 408 months left.
