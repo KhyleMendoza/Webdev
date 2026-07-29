@@ -70,6 +70,38 @@
 // }
 // getMilk(3, 5);
 
+// Version 3:
+function getMilk(money) {   
+  console.log("leaveHouse");
+  console.log("moveRight");
+  console.log("moveRight");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveRight");
+  console.log("moveRight");
+  var numberOfBottles = Math.floor(money / 1.5);
+  console.log(`Bought ${numberOfBottles} bottles of milk!`);
+  var bought = true;
+  console.log("moveLeft");
+  console.log("moveLeft");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveLeft");
+  console.log("moveLeft");
+  console.log("enterHouse");
+  return [money % 1.5, numberOfBottles, bought];
+}
+var [change, milk, bought] = getMilk(5)
+if (bought == true) {
+    console.log(`Milk: ${milk} Money left: ${change}`)
+} else {
+    console.log("Failed to purchase")
+}
+
 // Exercise 7 - Life In Weeks (90 yrs old max age) example: 56 yrs old Expected Output: You have 12410 days, 1768 weeks, and 408 months left.
 // function lifeInWeeks(age) {
 //     var yearsRemaining = 90 - age;
