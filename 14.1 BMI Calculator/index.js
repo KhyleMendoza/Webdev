@@ -14,7 +14,6 @@ calcBtn.addEventListener("click", function() {
     if (!weight || !height) {
         error.style.display = "block";
         bmiP[0].style.display = "none";
-
         return;
     } else {
         error.style.display = "none";
