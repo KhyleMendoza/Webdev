@@ -53,11 +53,28 @@
 // console.log(number)
 
 // Activity - Who is paying code challenge
-function whosPaying(names) {
-    let random = Math.floor(Math.random() * names.length);
-    return `${names[random]} is going to buy lunch today!`;
+// function whosPaying(names) {
+//     let random = Math.floor(Math.random() * names.length);
+//     return `${names[random]} is going to buy lunch today!`;
+// }
+
+// names = ["Khyle", "Ben", "Jenny", "Michael", "Chloe"];
+// paying = whosPaying(names);
+// console.log(paying)
+
+// While loop
+// var i = 0;
+// var food = ["Hotdog", "Adobo", "Sinigang", "Pinakbet", "Hashbrown"];
+// while (i <= 4) {
+//     console.log(i + 1);
+//     console.log(food[i])
+//     i++;
+// }
+
+// For loop
+var food = ["Hotdog", "Adobo", "Sinigang", "Pinakbet", "Hashbrown"];
+for (i = 1; i <=5; i++) {
+    console.log(i);
+    console.log(food[i-1])
 }
 
-names = ["Khyle", "Ben", "Jenny", "Michael", "Chloe"];
-paying = whosPaying(names);
-console.log(paying)
