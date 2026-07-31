@@ -32,15 +32,17 @@
 // console.log(color)
 // color.length;
 
-var guestList = ["Khyle", "Arianne", "Yu", "Jimmuel"];
-console.log(guestList);
-console.log(`Hi, ${guestList[0]}`);
-console.log(`There are ${guestList.length} Guest in total!`);
+//Activity - Guest list checker
+// var guestList = ["Khyle", "Arianne", "Yu", "Jimmuel"];
+// console.log(guestList);
+// console.log(`Hi, ${guestList[0]}`);
+// console.log(`There are ${guestList.length} Guest in total!`);
 
-guest = prompt("What is your name?");
+// guest = prompt("What is your name?");
 
-if (guestList.includes(guest)) {
-    console.log(`Welcome, ${guest}!`);
-} else {
-    console.log("You are not in the guest list!");
-}
+// if (guestList.includes(guest)) {
+//     console.log(`Welcome, ${guest}!`);
+// } else {
+//     console.log("You are not in the guest list!");
+// }
+
