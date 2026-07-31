@@ -44,29 +44,51 @@
 // console.log(fizzBuzz)
 
 // V3
+// var output = [];
+
+// function fizzBuzz(number) {
+
+//     var word = "";
+
+//     if (number % 3 === 0) {
+//         word += "Fizz";
+//     }
+
+//     if (number % 5 === 0) {
+//         word += "Buzz";
+//     }
+
+//     if (number % 3 === 0 || number % 5 === 0) {
+//         output.push(word);
+//     } else {
+//         output.push(number);
+//     }
+
+//     console.log(output);
+// }
+
+// for (count = 1; count <= 100; count++) {
+//     fizzBuzz(count);
+// }
+
+// V4
 var output = [];
+var count = 1;
 
-function fizzBuzz(number) {
-
-    var word = "";
-
-    if (number % 3 === 0) {
-        word += "Fizz";
-    }
-
-    if (number % 5 === 0) {
-        word += "Buzz";
-    }
-
-    if (number % 3 === 0 || number % 5 === 0) {
-        output.push(word);
+function fizzBuzz() {
+    if (count % 3 === 0 && count % 5 === 0) {
+        output.push("FizzBuzz");
+    } else if (count % 3 === 0) {
+        output.push("Fizz");
+    } else if (count % 5 === 0) {
+        output.push("Buzz");
     } else {
-        output.push(number);
+        output.push(count)
     }
-    
-    console.log(output);
+    console.log(output)
+    count++;
 }
 
-for (count = 1; count <= 100; count++) {
-    fizzBuzz(count);
+while (count <= 100) {
+    fizzBuzz();
 }
