@@ -20,10 +20,36 @@
 //     console.log(n);
 // }
 
-// V2
+// // V2
+// function fizzBuzz(number) {
+//     var word = "";
+//     console.log(number)
+//     if (number % 3 === 0) {
+//         word += "Fizz";
+//     }
+
+//     if (number % 5 === 0) {
+//         word += "Buzz";
+//     }
+
+//     if (!word) {
+//         word = number;
+//     }
+//     return word;
+// }
+
+// number = Math.random();
+// number = Math.floor(number * 100 + 1);
+// fizzBuzz = fizzBuzz(number);
+// console.log(fizzBuzz)
+
+// V3
+var output = [];
+
 function fizzBuzz(number) {
+
     var word = "";
-    console.log(number)
+
     if (number % 3 === 0) {
         word += "Fizz";
     }
@@ -32,13 +58,15 @@ function fizzBuzz(number) {
         word += "Buzz";
     }
 
-    if (!word) {
-        word = number;
+    if (number % 3 === 0 || number % 5 === 0) {
+        output.push(word);
+    } else {
+        output.push(number);
     }
-    return word;
+    
+    console.log(output);
 }
 
-number = Math.random();
-number = Math.floor(number * 100 + 1);
-fizzBuzz = fizzBuzz(number);
-console.log(fizzBuzz)
+for (count = 1; count <= 100; count++) {
+    fizzBuzz(count);
+}
