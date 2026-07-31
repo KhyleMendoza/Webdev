@@ -55,8 +55,9 @@
 // Activity - Who is paying code challenge
 function whosPaying(names) {
     let random = Math.floor(Math.random() * names.length);
-    console.log(`${names[random]} is going to buy lunch today!`);
+    return `${names[random]} is going to buy lunch today!`;
 }
 
 names = ["Khyle", "Ben", "Jenny", "Michael", "Chloe"];
-whosPaying(names);
+paying = whosPaying(names);
+console.log(paying)
