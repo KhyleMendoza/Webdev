@@ -46,8 +46,18 @@
 //     console.log("You are not in the guest list!");
 // }
 
-var number = [];
-number.push(1, 2, 3)
-console.log(number)
-number.pop()
-console.log(number)
+// var number = [];
+// number.push(1, 2, 3)
+// console.log(number)
+// number.pop()
+// console.log(number)
+
+// Activity - Who is paying code challenge
+function whosPaying(names) {
+    let random = Math.random();
+    random = Math.floor(random * names.length);
+    console.log(`${names[random]} is going to buy lunch today!`);
+}
+
+names = ["Khyle", "Ben", "Jenny", "Michael", "Chloe"];
+whosPaying(names);
