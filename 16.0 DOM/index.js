@@ -33,4 +33,23 @@ document.querySelector(".container p").style.color = "orange";
 let paragraph = document.querySelectorAll(".container p");
 paragraph[2].style.color = "Green";
 paragraph[3].style.backgroundColor = "lightblue";
+paragraph[1].classList.add("huge");
 alert(paragraph[1].innerText)
+
+const btn2 = document.getElementById("btn2");
+btn2.addEventListener("click", () => {
+    square = document.querySelector(".square");
+    // square.classList.add("invisible");
+    square.classList.toggle("invisible")
+})
+
+const box = document.querySelector(".box");
+const box2 = document.querySelector(".box2");
+box.innerText = "<p>Hi <strong>Khyle</strong>!</p>";
+box2.innerHTML = "<p>Hi <strong>Khyle</strong>!</p>";
+
+const google = document.querySelector("a");
+console.log(google);
+google.getAttribute("href")
+google.setAttribute("href", "https://youtube.com");
+google.innerText = "Youtube"
