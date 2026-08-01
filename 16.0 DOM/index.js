@@ -2,6 +2,12 @@
 // document.querySelector("h1").innerHTML = "Good Bye";
 // document.write("Hi")
 // console.log(document.firstElementChild.lastElementChild.firstElementChild)
+let body = document.querySelector("body").style.backgroundColor = "lightgray";
+
+let heading = document.querySelector("h1");
+heading.style.color = "red";
+heading.style.fontSize = "70px";
+heading.style.margin = "0";
 document.querySelector("input").click();
 
 let changeColor = document.getElementById("click");
