@@ -78,23 +78,49 @@
 //     console.log(food[i-1])
 // }
 
-function calculator(num1, num2, operator) {
-    switch (operator) {
-        case "+":
-            return num1 + num2;
-        case "-":
-            return num1 - num2;
-        case "*":
-            return num1 * num2;
-        case "/":
-            return num1 / num2;
-        case "%":
-            return num1 % num2;
-        default:
-            return "Invalid Operator!";
-    }
+// // V1
+// function calculator(num1, num2, operator) {
+//     switch (operator) {
+//         case "+":
+//             return num1 + num2;
+//         case "-":
+//             return num1 - num2;
+//         case "*":
+//             return num1 * num2;
+//         case "/":
+//             return num1 / num2;
+//         case "%":
+//             return num1 % num2;
+//         default:
+//             return "Invalid Operator!";
+//     }
+//     return num1 + num2;
+// }
+
+// answer = calculator(3, 5, "%");
+// console.log(answer);
+
+// V2
+
+function add(num1, num2) {
     return num1 + num2;
 }
 
-answer = calculator(3, 5, "%");
-console.log(answer);
+function sub(num1, num2) {
+    return num1 - num2;
+}
+
+function mul(num1, num2) {
+    return num1 * num2;
+}
+
+function div(num1, num2) {
+    return num1 / num2;
+}
+
+function calculator(num1, num2, operator) {
+    return operator(num1, num2)
+}
+
+answer = calculator(15, 6, sub)
+console.log(answer)
