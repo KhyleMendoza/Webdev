@@ -74,7 +74,7 @@ a {
     padding-top: 50px;
     height: 100dvh;
     background-image:
-        linear-gradient(rgba(19, 74, 45, 0.5), rgba(19, 74, 45, 0.5)),
+        linear-gradient(rgba(19, 74, 45, 0.2), rgba(19, 74, 45, 0.45)),
         url("../images/Hero-bg.png");
     background-size: contain;
     background-position: center;
