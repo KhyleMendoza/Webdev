@@ -71,10 +71,30 @@
 //     i++;
 // }
 
-// For loop
-var food = ["Hotdog", "Adobo", "Sinigang", "Pinakbet", "Hashbrown"];
-for (i = 1; i <=5; i++) {
-    console.log(i);
-    console.log(food[i-1])
+// // For loop
+// var food = ["Hotdog", "Adobo", "Sinigang", "Pinakbet", "Hashbrown"];
+// for (i = 1; i <=5; i++) {
+//     console.log(i);
+//     console.log(food[i-1])
+// }
+
+function calculator(num1, num2, operator) {
+    switch (operator) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num1 / num2;
+        case "%":
+            return num1 % num2;
+        default:
+            return "Invalid Operator!";
+    }
+    return num1 + num2;
 }
 
+answer = calculator(3, 5, "%");
+console.log(answer);
