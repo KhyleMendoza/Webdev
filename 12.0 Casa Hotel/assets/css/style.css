@@ -71,9 +71,11 @@ a {
 }
 
 .hero-section {
-    padding-top: 10px;
+    padding-top: 50px;
     height: 100dvh;
-    background-image: url("../images/Hero-bg.png");
+    background-image:
+        linear-gradient(rgba(19, 74, 45, 0.5), rgba(19, 74, 45, 0.5)),
+        url("../images/Hero-bg.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,4 +186,27 @@ a {
     border-radius: 10px;
     display: flex;
     gap: 5px;
+}
+
+.tags {
+    display: flex;
+    color: white;
+    width: 600px;
+    flex: 1;
+    gap: 30px;
+    margin: 20px 10px;
+}
+
+.tags > div {
+    border-left: 2px solid #B1F0CE;
+    padding: 10px;
+}
+
+.tags > div > .tag-number {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.tags > div > p {
+    font-size: 20px;
 }
