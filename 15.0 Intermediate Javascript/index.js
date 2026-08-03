@@ -175,3 +175,4 @@ var houseKeeper1 = new HouseKeeper(5, "Jane", ["Bathroom"]);
 var houseKeeper2 = new HouseKeeper(7, "norn", ["Livingroom", "Bathroom", "Kitchen"])
 console.log(houseKeeper1)
 console.log(houseKeeper2)
+console.log(houseKeeper1.name)
