@@ -151,28 +151,84 @@
 //     console.log(`Hello, I am ${houseKeeper1.name} and im your new house keeper. my age is ${houseKeeper1.age} and im currently not assigned to task.`)
 // }
 
-// Constructor Function - capital first letter of word
-function BellBoy (name, age, hasWorkPermit, languages) {
-    this.name = name;
-    this.age = age;
-    this.hasWorkPermit = hasWorkPermit;
-    this.languages = languages;
-}
+// // Constructor Function - capital first letter of word
+// function BellBoy (name, age, hasWorkPermit, languages) {
+//     this.name = name;
+//     this.age = age;
+//     this.hasWorkPermit = hasWorkPermit;
+//     this.languages = languages;
+// }
 
-var bellboy1 = new BellBoy("John", 23, true, ["English, Japanase"]);
-var bellboy2 = new BellBoy("Carl", 22, false, ["English"]);
-var bellboy3 = new BellBoy("Nick", 25, true, ["English"]);
-console.log(bellboy1)
-console.log("Hi i am " + bellboy1.name + " and This is bellboy2: " + bellboy2.name + " and the other one is " + bellboy3.name);
+// var bellboy1 = new BellBoy("John", 23, true, ["English, Japanase"]);
+// var bellboy2 = new BellBoy("Carl", 22, false, ["English"]);
+// var bellboy3 = new BellBoy("Nick", 25, true, ["English"]);
+// console.log(bellboy1)
+// console.log("Hi i am " + bellboy1.name + " and This is bellboy2: " + bellboy2.name + " and the other one is " + bellboy3.name);
+
+// function HouseKeeper(yearsOfExperience, name, cleaningRepertoire) {
+//     this.yearsOfExperience = yearsOfExperience;
+//     this.name = name;
+//     this.cleaningRepertoire = cleaningRepertoire;
+// }
+
+// var houseKeeper1 = new HouseKeeper(5, "Jane", ["Bathroom"]);
+// var houseKeeper2 = new HouseKeeper(7, "norn", ["Livingroom", "Bathroom", "Kitchen"])
+// console.log(houseKeeper1)
+// console.log(houseKeeper2)
+// console.log(houseKeeper1.name)
+
+// Methods
+// var bellboy1 = {
+//     name: "timmy",
+//     age: 21,
+//     hasWorkPermit: true,
+//     languages: ["French", "English"],
+//     moveSuitcase: function() {
+//         alert("May I take your suitcase?");
+//         pickUpSuitcase();
+//         move();
+//     }
+// }
+
+// function pickUpSuitcase() {
+//     console.log("bellboy picked up the suitcase")
+// }
+
+// function move() {
+//     console.log("Bellboy move")
+// }
+
+// // Constructor function
+// function BellBoy(name, age, hasWorkPermit, languages, moveSuitcase) {
+//     this.name = name;
+//     this.age = age;
+//     this.hasWorkPermit = hasWorkPermit;
+//     this.languages = languages;
+//     this.moveSuitcase = function () {
+//         alert("May I take your suitcase?");
+//         pickUpSuitcase();
+//         move();
+//     }
+// }
+
+// bellBoy1 = new BellBoy("timmy", 22, true, ["English", "French"]);
+// console.log(bellBoy1.moveSuitcase())
+
+function cleanSuccess() {
+    alert("Done cleaning!")
+}
 
 function HouseKeeper(yearsOfExperience, name, cleaningRepertoire) {
     this.yearsOfExperience = yearsOfExperience;
     this.name = name;
     this.cleaningRepertoire = cleaningRepertoire;
+    this.clean = function () {
+        alert("Cleaning in progress...");
+        cleanSuccess();
+        return "Done cleaning";
+    }
 }
 
-var houseKeeper1 = new HouseKeeper(5, "Jane", ["Bathroom"]);
-var houseKeeper2 = new HouseKeeper(7, "norn", ["Livingroom", "Bathroom", "Kitchen"])
-console.log(houseKeeper1)
-console.log(houseKeeper2)
-console.log(houseKeeper1.name)
+var houseKeeper1 = new HouseKeeper(6, "Jane", ["bathroom"]);
+console.log(houseKeeper1);
+console.log(houseKeeper1.clean());
