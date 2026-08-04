@@ -235,28 +235,67 @@
 
 // Callback
 
-function anotherAddEventListener(typeOfEvent, callback) {
-    var eventThatHappened = {
-        eventType: "keydown",
-        key: "p",
-        durationOfKeypress: 2
-    }
+// function anotherAddEventListener(typeOfEvent, callback) {
+//     var eventThatHappened = {
+//         eventType: "keydown",
+//         key: "p",
+//         durationOfKeypress: 2
+//     }
 
-    if (eventThatHappened.eventType === typeOfEvent) {
-        callback(eventThatHappened);
+//     if (eventThatHappened.eventType === typeOfEvent) {
+//         callback(eventThatHappened);
+//     }
+// }
+
+// anotherAddEventListener("keydown", function(event) {
+//     console.log(event);
+// });
+
+// document.addEventListener("keydown", function(e) {
+//     console.log(e)
+//     console.log(e.key)
+// })
+
+// document.querySelector("body").addEventListener("click", function(e) {
+//     console.log(e)
+//     console.log(`x: ${e.x}, y: ${e.y}`)
+// })
+
+// setTimeout function
+setTimeout(function() {
+    console.log("hello from 5 seconds ago")
+}, 5000);
+
+// Typing animation
+
+word = "Hello World"
+let i = 0;
+
+function type() {
+    if (i < word.length) {
+        document.getElementById("typing").textContent += word[i];
+        console.log(word[i])
+        i++
+        setTimeout(type, 100)
     }
 }
 
-anotherAddEventListener("keydown", function(event) {
-    console.log(event);
+type()
+
+// Debouncing in search
+
+let timeout;
+
+search = document.getElementById("search");
+search.addEventListener("input", function(event) {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+        console.log("searching... ");
+        
+        setTimeout(function() {
+            console.log(`found ${event.target.value}`)
+        }, 500)
+    }, 500)
+
 });
-
-document.addEventListener("keydown", function(e) {
-    console.log(e)
-    console.log(e.key)
-})
-
-document.querySelector("body").addEventListener("click", function(e) {
-    console.log(e)
-    console.log(`x: ${e.x}, y: ${e.y}`)
-})
