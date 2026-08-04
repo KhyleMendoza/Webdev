@@ -59,9 +59,18 @@ function playDrum(key) {
             kickBass.play();
             break;
         default:
-            console.log(drumBtn)
+            console.log(key)
             return;
     }
+}
+
+function buttonAnimation(key) {
+    var activeBtn = document.querySelector("." + key);
+    activeBtn.classList.add("pressed");
+    
+    setTimeout(function() {
+        activeBtn.classList.remove("pressed");
+    }, 100);
 }
 
 for (var i = 0; i < btn.length; i++) {
@@ -72,7 +81,8 @@ for (var i = 0; i < btn.length; i++) {
         // tom1.play();
 
         var key = this.innerText;
-        playDrum(key)
+        playDrum(key);
+        buttonAnimation(key);
     });
 };
 
@@ -84,4 +94,5 @@ document.addEventListener("keydown", e => {
     // console.log(e.key + " Key was pressed!");
     var key = e.key;
     playDrum(key)
+    buttonAnimation(key)
 })
