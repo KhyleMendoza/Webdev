@@ -214,21 +214,49 @@
 // bellBoy1 = new BellBoy("timmy", 22, true, ["English", "French"]);
 // console.log(bellBoy1.moveSuitcase())
 
-function cleanSuccess() {
-    alert("Done cleaning!")
-}
+// function cleanSuccess() {
+//     alert("Done cleaning!")
+// }
 
-function HouseKeeper(yearsOfExperience, name, cleaningRepertoire) {
-    this.yearsOfExperience = yearsOfExperience;
-    this.name = name;
-    this.cleaningRepertoire = cleaningRepertoire;
-    this.clean = function () {
-        alert("Cleaning in progress...");
-        cleanSuccess();
-        return "Done cleaning";
+// function HouseKeeper(yearsOfExperience, name, cleaningRepertoire) {
+//     this.yearsOfExperience = yearsOfExperience;
+//     this.name = name;
+//     this.cleaningRepertoire = cleaningRepertoire;
+//     this.clean = function () {
+//         alert("Cleaning in progress...");
+//         cleanSuccess();
+//         return "Done cleaning";
+//     }
+// }
+
+// var houseKeeper1 = new HouseKeeper(6, "Jane", ["bathroom"]);
+// console.log(houseKeeper1);
+// console.log(houseKeeper1.clean());
+
+// Callback
+
+function anotherAddEventListener(typeOfEvent, callback) {
+    var eventThatHappened = {
+        eventType: "keydown",
+        key: "p",
+        durationOfKeypress: 2
+    }
+
+    if (eventThatHappened.eventType === typeOfEvent) {
+        callback(eventThatHappened);
     }
 }
 
-var houseKeeper1 = new HouseKeeper(6, "Jane", ["bathroom"]);
-console.log(houseKeeper1);
-console.log(houseKeeper1.clean());
+anotherAddEventListener("keydown", function(event) {
+    console.log(event);
+});
+
+document.addEventListener("keydown", function(e) {
+    console.log(e)
+    console.log(e.key)
+})
+
+document.querySelector("body").addEventListener("click", function(e) {
+    console.log(e)
+    console.log(`x: ${e.x}, y: ${e.y}`)
+})
