@@ -130,7 +130,23 @@ $("button#show").on("click", function() {
     $("h1").animate({opacity: 1, margin: "50px"})
 })
 
-$("button").on("click", function() {
-    // console.log($("input").val())
-    // $("h1").toggleClass("Active");
+// $("button").eq(0).on("click", function() {
+//     console.log($("input").val())
+//     $("h1").toggleClass("Active");
+// })
+
+// $("button").eq(1).on("click", function() {
+//     $("h1").toggleClass("Active");
+// })
+
+$("button:eq(0)").on("click", function() {
+    console.log($("input").val())
+    $("h1").toggleClass("Active");
 })
+
+$("button:eq(1)").on("click", function() {
+    $("h1").toggleClass("Active");
+})
+
+$("button").odd().css("color", "#fd6208c7")
+$("button").even().css("color", "#1675b4")
