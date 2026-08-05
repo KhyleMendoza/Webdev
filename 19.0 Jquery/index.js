@@ -100,9 +100,11 @@ $("h1").append("<button class='newBtn'>New</button>")
 // $("button").remove()
 $(".newBtn").remove()
 $("div button").on("click", function() {
-    $("h1").hide()
+    // $("h1").hide()
+    $("h1").fadeOut()
 })
 $("button#show").text("show h1")
 $("button#show").on("click", function() {
-    $("h1").show()
+    // $("h1").show()
+    $("h1").fadeIn()
 })
