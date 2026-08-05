@@ -50,34 +50,43 @@ console.log($("div button").attr("class"))
 //     console.log("hello");
 // })
 
-$("h1").click(() => {
-    console.log("hello");
-    $("h1").css("color", "#330799");
-})
+// $("h1").click(() => {
+//     console.log("hello");
+//     $("h1").css("color", "#330799");
+// })
 
 // $("button").click(function() {
 //     console.log("hi")
 //     $("h1").css("color", "#248748")
 // })
 
-$("button").click(() => {
-    console.log("hi")
-    $("h1").css("color", "#248748")
-})
+// $("button").click(() => {
+//     console.log("hi")
+//     $("h1").css("color", "#248748")
+// })
 
 // $("input").keydown(function(event) {
 //     console.log(event.key);
 // })
 
-$("input").keydown((e) => {
-    console.log(e.key)
-})
+// $("input").keydown((e) => {
+//     console.log(e.key)
+// })
 
-let h1 = "";
-$("body").keydown((e) => {
-    console.log(e.key)
-    if (e.key.length === 1) {
-        h1 = h1 + e.key; 
-        $("h1").text(h1)
-    }
+// let h1 = "";
+// $("body").keydown((e) => {
+//     console.log(e.key)
+//     if (e.key.length === 1) {
+//         h1 = h1 + e.key; 
+//         $("h1").text(h1)
+//     }
+// })
+
+// // event listener on
+// $("h1").on("click", function() {
+//     $("h1").css("color", "#315092")
+// })
+
+$("h1").on("mouseover", function() {
+    $("h1").css("color", "#315092")
 })
