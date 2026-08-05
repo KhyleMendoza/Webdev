@@ -139,14 +139,27 @@ $("button#show").on("click", function() {
 //     $("h1").toggleClass("Active");
 // })
 
-$("button:eq(0)").on("click", function() {
+// $("button:eq(0)").on("click", function() {
+//     console.log($("input").val())
+//     $("h1").toggleClass("Active");
+// })
+
+// $("button:eq(1)").on("click", function() {
+//     $("h1").toggleClass("Active");
+// })
+
+$("button:first").on("click", function() {
     console.log($("input").val())
     $("h1").toggleClass("Active");
 })
 
-$("button:eq(1)").on("click", function() {
+$("button:last").on("click", function() {
+    console.log($("input").val())
     $("h1").toggleClass("Active");
 })
+
+// $("button:odd").css("color", "#fd6208c7")
+// $("button:even").css("color", "#1675b4")
 
 $("button").odd().css("color", "#fd6208c7")
 $("button").even().css("color", "#1675b4")
