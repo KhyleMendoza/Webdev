@@ -90,3 +90,12 @@ console.log($("div button").attr("class"))
 $("h1").on("click", function() {
     $("h1").css("color", "#315092")
 })
+
+// adding and removing element using jQuery
+$("h1").before("<button class='newBtn'>New</button>")
+$("h1").after("<button class='newBtn'>New</button> <p>hi</p>");
+$("h1").prepend("<button class='newBtn'>New</button>");
+$("h1").append("<button class='newBtn'>New</button>")
+
+// $("button").remove()
+$(".newBtn").remove()
