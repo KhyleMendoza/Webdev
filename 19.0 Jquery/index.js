@@ -129,3 +129,7 @@ $("button#show").on("click", function() {
     // $("h1").slideToggle()
     $("h1").animate({opacity: 1, margin: "50px"})
 })
+
+$("button").on("click", function() {
+    console.log($("input").val())
+})
