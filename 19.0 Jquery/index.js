@@ -131,5 +131,6 @@ $("button#show").on("click", function() {
 })
 
 $("button").on("click", function() {
-    console.log($("input").val())
+    // console.log($("input").val())
+    // $("h1").toggleClass("Active");
 })
