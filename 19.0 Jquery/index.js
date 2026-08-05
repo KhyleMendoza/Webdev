@@ -83,10 +83,10 @@ console.log($("div button").attr("class"))
 // })
 
 // // event listener on
-// $("h1").on("click", function() {
+// $("h1").on("mouseover", function() {
 //     $("h1").css("color", "#315092")
 // })
 
-$("h1").on("mouseover", function() {
+$("h1").on("click", function() {
     $("h1").css("color", "#315092")
 })
