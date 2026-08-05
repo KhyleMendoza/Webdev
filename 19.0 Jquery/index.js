@@ -25,7 +25,7 @@ $("h1").addClass("big-title margin-50")
 
 var name = "Khyle";
 $("button").html("<em>Don't click me!</em>")
-$("div button").text(name + "Don't click me!")
+$("div button").text(name + " Don't click me!")
 $("h1").text(`Hello ${name}`)
 
 console.log($("img").attr("src"));
@@ -87,9 +87,9 @@ console.log($("div button").attr("class"))
 //     $("h1").css("color", "#315092")
 // })
 
-$("h1").on("click", function() {
-    $("h1").css("color", "#315092")
-})
+// $("h1").on("click", function() {
+//     $("h1").css("color", "#315092")
+// })
 
 // adding and removing element using jQuery
 $("h1").before("<button class='newBtn'>New</button>")
@@ -99,3 +99,10 @@ $("h1").append("<button class='newBtn'>New</button>")
 
 // $("button").remove()
 $(".newBtn").remove()
+$("div button").on("click", function() {
+    $("h1").hide()
+})
+$("button#show").text("show h1")
+$("button#show").on("click", function() {
+    $("h1").show()
+})
