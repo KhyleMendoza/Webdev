@@ -32,6 +32,7 @@ console.log($("img").attr("src"));
 
 setTimeout(function () {
     $("img").attr("src", "img/tom2.png")
+    $("img").attr("alt", "tom2")
     console.log($("img").attr("src"));
 }, 2000);
 
@@ -39,3 +40,7 @@ setTimeout(function() {
     $("a").attr("href", "https://youtube.com")
     $("a").text("Youtube")
 }, 5000);
+
+console.log($("div button").attr("class"))
+$("div button").attr("class", "otherBtn2")
+console.log($("div button").attr("class"))
