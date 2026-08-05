@@ -76,6 +76,8 @@ $("input").keydown((e) => {
 let h1 = "";
 $("body").keydown((e) => {
     console.log(e.key)
-    h1 = h1 + e.key; 
-    $("h1").text(h1)
+    if (e.key.length === 1) {
+        h1 = h1 + e.key; 
+        $("h1").text(h1)
+    }
 })
