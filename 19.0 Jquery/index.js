@@ -108,7 +108,8 @@ $("div button").on("click", function() {
     // $("h1").slideUp()
     // $("h1").slideToggle()
     // // in animate only number value are allowed not colors
-    $("h1").animate({opacity: 0.5, margin: "20px"})
+    // $("h1").animate({opacity: 0.5, margin: "20px"})
+    $("h1").slideUp().slideDown().animate({opacity: 0.5, margin: "20px"}).fadeOut().fadeIn().animate({margin: "50px", opacity: 1})
 })
 $("button#show").text("show h1")
 $("button#show").on("click", function() {
