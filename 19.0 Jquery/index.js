@@ -19,6 +19,11 @@
 // $("h1").removeClass("big-title margin-50")
 
 $("h1").addClass("big-title margin-50")
-console.log($("h1").hasClass("big-title"))
-console.log($("h1").hasClass("big-title margin-50"))
-console.log($("h1").hasClass("big-title margin-30"))
+// console.log($("h1").hasClass("big-title"))
+// console.log($("h1").hasClass("big-title margin-50"))
+// console.log($("h1").hasClass("big-title margin-30"))
+
+var name = "Khyle";
+$("button").html("<em>Don't click me!</em>")
+$("div button").text(name + "Don't click me!")
+$("h1").text(`Hello ${name}`)
