@@ -45,6 +45,8 @@ console.log($("div button").attr("class"))
 $("div button").attr("class", "otherBtn2")
 console.log($("div button").attr("class"))
 
+$("div button").attr("id", "specialBtn");
+
 // // add event listener
 // $("h1").click(function() {
 //     console.log("hello");
