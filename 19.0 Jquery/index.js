@@ -27,3 +27,15 @@ var name = "Khyle";
 $("button").html("<em>Don't click me!</em>")
 $("div button").text(name + "Don't click me!")
 $("h1").text(`Hello ${name}`)
+
+console.log($("img").attr("src"));
+
+setTimeout(function () {
+    $("img").attr("src", "img/tom2.png")
+    console.log($("img").attr("src"));
+}, 2000);
+
+setTimeout(function() {
+    $("a").attr("href", "https://youtube.com")
+    $("a").text("Youtube")
+}, 5000);
