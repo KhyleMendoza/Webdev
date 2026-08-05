@@ -106,7 +106,9 @@ $("div button").on("click", function() {
     // $("h1").fadeOut()
     // $("h1").fadeToggle()
     // $("h1").slideUp()
-    $("h1").slideToggle()
+    // $("h1").slideToggle()
+    // // in animate only number value are allowed not colors
+    $("h1").animate({opacity: 0.5, margin: "20px"})
 })
 $("button#show").text("show h1")
 $("button#show").on("click", function() {
@@ -114,5 +116,6 @@ $("button#show").on("click", function() {
     //$("h1").fadeIn()
     // $("h1").fadeToggle()
     // $("h1").slideDown()
-    $("h1").slideToggle()
+    // $("h1").slideToggle()
+    $("h1").animate({opacity: 1, margin: "50px"})
 })
