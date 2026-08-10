@@ -34,6 +34,14 @@ inquirer.prompt([
     {
         message: "What is the name of the website?",
         name: "URL"
+    }, 
+    {
+        message: "What size do you want for the image? (1-100, default: 5)",
+        name: "size"
+    },
+    {
+        message: "How much margin do you want for the QR code? (1-10, default: 4)",
+        name: "margin"
     }
 ])
 .then((answers) => {
@@ -48,7 +56,24 @@ inquirer.prompt([
         return;
     }
 
-    const qr_png = qr.image(url, {type: 'png'});
+    let size = Number(answers.size);
+
+    if (size <= 0 || size > 100) {
+        console.log("set size to default size: 5 due to low size or exceed limit size")
+        size = 5;
+    }
+
+    let margin = Number(answers.margin);
+
+    if (margin < 1 || margin > 10) {
+        console.log("set margin to default size: 4 due to low margin or exceed limit margin")
+        margin = 4;
+    }
+
+    // console.log(size)
+    // console.log(margin)
+
+    const qr_png = qr.image(url, {type: 'png', size: size, margin: margin});
     var output = fs.createWriteStream('QRcode.png');
 
     output.on("error", (err) => {
