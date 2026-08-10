@@ -11,6 +11,7 @@ inquirer
   ])
   .then((answers) => {
     const url = answers.URL;
+    console.log(url)
     var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream("qr_img.png"));
 
