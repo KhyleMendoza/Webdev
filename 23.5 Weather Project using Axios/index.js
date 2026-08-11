@@ -54,9 +54,5 @@ inquirer.prompt([
     console.log("=================================\n");
 })
 .catch((error) => {
-if (error.isTtyError) {
-    console.error(error)
-} else {
-    console.error(error)
-}
+    console.error(error);
 });
