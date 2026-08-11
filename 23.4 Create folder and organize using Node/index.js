@@ -23,7 +23,7 @@ let filepath = ["document", "img", "video"]
 for (var i = 0; i < files.length - 1; i++) {
     if (!fs.existsSync(`${filepath[i]}/${files[i]}`)) {
         fs.renameSync(`random/${files[i]}`, `${filepath[i]}/${files[i]}`)
-        console.log("done")
+        console.log(`done file ${i}`)
     } else {
         console.log("file not existing")
     }
