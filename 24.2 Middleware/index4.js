@@ -81,7 +81,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/submit", (req, res) => {
-  res.send(`<h1>Hello your new band name is ${bandName}!`)
+  res.send(`<h1>Hello your new band name is ${bandName}!</h1>`)
 })
 
 app.listen(port, () => {
