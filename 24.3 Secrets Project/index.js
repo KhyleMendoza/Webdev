@@ -49,8 +49,6 @@ function checkPassword(req, res, next) {
     let password = req.body["password"];
     if (password == "ILoveProgramming") {
         isAuthenticated = true;
-    } else {
-        isAuthenticated = false;
     }
     next();
 } 
