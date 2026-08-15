@@ -13,7 +13,7 @@ function getDay(req, res, next) {
     const weekday = weekdays[d.getDay()];
     // const weekday = "Monday";
 
-    if (weekday == "Saturday" || weekday == "Sunday") {
+    if (weekday === "Saturday" || weekday === "Sunday") {
         day = "a weekend";
         advice = "it's time to have fun"
     } else {
