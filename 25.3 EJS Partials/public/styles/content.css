@@ -59,7 +59,8 @@ form {
 }
 
 textarea {
-  height: 150px;
+  min-height: 150px;
+  max-height: 200px;
   line-height: 150%;
   resize: vertical;
 }
