@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+    <div class="wrapper">
+        <div class="header">
+            <p>SPACE TRACKING</p>
+            <h1>International Space Station</h1>
+        </div>
+        <div class="main">
+            <div class="image">
+                <img src="https://plus.unsplash.com/premium_photo-1714618982739-a48bdef8a73b?q=80&w=711&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="International Space Station">
+            </div>
+
+            <div class="info">
+                <h2>Current Position</h2>
+                <p class="description">Live position data of the International Space Station retrieved from the ISS tracking API.</p>
+
+                <div class="data">
+                    <div class="row">
+                        <span class="label">Latitude</span>
+                        <span class="value"> <%= latitude.toFixed(4) %>° </span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Longitude</span>
+                        <span class="value"> <%= longitude.toFixed(4) %>° </span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Altitude</span>
+                        <span class="value"> <%= altitude.toFixed(2) %> km</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Velocity</span>
+                        <span class="value"> <%= velocity.toFixed(2) %> km/h</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Visibility</span>
+                        <span class="value"> <%= visibility %></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>
