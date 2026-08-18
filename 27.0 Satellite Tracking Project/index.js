@@ -13,11 +13,7 @@ app.get("/", async (req, res) => {
         const data = await response.json();
         // console.log(data);
         res.render("index.ejs", {
-            latitude: data.latitude,
-            longitude: data.longitude,
-            altitude: data.altitude,
-            velocity: data.velocity,
-            visibility: data.visibility
+            data: data
         })
     } catch (error) {
         console.error(error);

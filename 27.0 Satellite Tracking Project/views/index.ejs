@@ -4,6 +4,7 @@
             <p>SPACE TRACKING</p>
             <h1>International Space Station</h1>
         </div>
+        <% if(locals.data) { %>
         <div class="main">
             <div class="image">
                 <img src="https://plus.unsplash.com/premium_photo-1714618982739-a48bdef8a73b?q=80&w=711&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="International Space Station">
@@ -16,32 +17,43 @@
                 <div class="data">
                     <div class="row">
                         <span class="label">Latitude</span>
-                        <span class="value"> <%= latitude.toFixed(4) %>° </span>
+                        <span class="value"> <%= data.latitude.toFixed(4) %>° </span>
                     </div>
 
                     <div class="row">
                         <span class="label">Longitude</span>
-                        <span class="value"> <%= longitude.toFixed(4) %>° </span>
+                        <span class="value"> <%= data.longitude.toFixed(4) %>° </span>
                     </div>
 
                     <div class="row">
                         <span class="label">Altitude</span>
-                        <span class="value"> <%= altitude.toFixed(2) %> km</span>
+                        <span class="value"> <%= data.altitude.toFixed(2) %> km</span>
                     </div>
 
                     <div class="row">
                         <span class="label">Velocity</span>
-                        <span class="value"> <%= velocity.toFixed(2) %> km/h</span>
+                        <span class="value"> <%= data.velocity.toFixed(2) %> km/h</span>
                     </div>
 
                     <div class="row">
                         <span class="label">Visibility</span>
-                        <span class="value"> <%= visibility %></span>
+                        <span class="value"> <%= data.visibility %></span>
                     </div>
                 </div>
 
             </div>
         </div>
+        <div class="map-section">
+            <h2>ISS Location</h2>
+            <iframe
+                src="https://www.google.com/maps?q=<%= data.latitude %>,<%= data.longitude %>&z=3&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <% } else { %>
+            <p>No data to show</p>
+        <% } %>
     </div>
 
 <%- include("partials/footer.ejs") %>
