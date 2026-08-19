@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <% if (locals.currentNumber) {%>
+        <div class="container">
+            <h1><span class="higher">Higher</span> Or <span class="lower">Lower</span></h1>
+            <div>
+                <p>Score <span>0</span></p>
+            </div>
+            <div class="numbers">
+                <div>
+                    <p>Current Number</p>
+                    <p><%= currentNumber %></p>
+                </div>
+                <div>
+                    <p>Next Number</p>
+                    <% if (locals.nextNumber) {%>
+                        <p><%= nextNumber %></p>
+                    <% } %>
+                </div>
+            </div>
+            <form action="/guess" method="POST">
+                <div class="btn-container">
+                    <button class="high" name="guess" value="higher">Higher</button>
+                    <button class="tie" name="guess" value="tie">Tie</button>
+                    <button class="low" name="guess" value="lower">Lower</button>
+                </div>
+            </form>
+        </div>
+    <% } else { %>
+        <h2>Nothing to display</h2>
+    <% } %>
+
+
+</body>
+</html>
