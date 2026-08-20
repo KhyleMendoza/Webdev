@@ -31,7 +31,6 @@ app.post("/recipe", (req, res) => {
     default:
       break;
   }
-  res.render("index.ejs", {recipe: JSON.parse(recipeJSON)});
 });
 
 app.listen(port, () => {
