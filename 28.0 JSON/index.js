@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/recipe", (req, res) => {
-  console.log(req.body.choice)
+  // console.log(req.body.choice)
   switch (req.body.choice) {
     case "chicken":
       data = JSON.parse(recipeJSON)[0]
