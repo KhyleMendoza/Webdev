@@ -10,27 +10,28 @@ const recipeJSON =
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let data;
+
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {recipe: data});
 });
 
 app.post("/recipe", (req, res) => {
   console.log(req.body.choice)
   switch (req.body.choice) {
     case "chicken":
-      console.log(JSON.parse(recipeJSON)[0])
-      res.render("index.ejs", {recipe: JSON.parse(recipeJSON)[0]})
+      data = JSON.parse(recipeJSON)[0]
       break;
     case "beef":
-      res.render("index.ejs", {recipe: JSON.parse(recipeJSON)[1]})
+      data = JSON.parse(recipeJSON)[1]
       break;
     case "fish":
-      res.render("index.ejs", {recipe: JSON.parse(recipeJSON)[2]})
+      data = JSON.parse(recipeJSON)[2]
       break;
-
     default:
       break;
   }
+  res.redirect("/")
 });
 
 app.listen(port, () => {
