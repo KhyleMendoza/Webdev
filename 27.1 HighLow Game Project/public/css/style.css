@@ -18,6 +18,11 @@ h1 {
     color: white;
 }
 
+.score {
+    display: flex;
+    gap: 20px;
+}
+
 .higher {
     color: green;
 }
@@ -29,8 +34,4 @@ h1 {
 .numbers {
     display: flex;
     gap: 20px;
-}
-
-.high {
-    
 }

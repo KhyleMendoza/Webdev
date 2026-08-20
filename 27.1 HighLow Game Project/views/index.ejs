@@ -10,8 +10,9 @@
     <% if (locals.currentNumber) {%>
         <div class="container">
             <h1><span class="higher">Higher</span> Or <span class="lower">Lower</span></h1>
-            <div>
-                <p>Score <span>0</span></p>
+            <div class="score">
+                <p>Life: <span> <%= life %> </span></p>
+                <p>Score: <span><%= score %></span></p>
             </div>
             <div class="numbers">
                 <div>
