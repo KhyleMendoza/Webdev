@@ -40,6 +40,15 @@
       background-color: #e74c3c;
     }
 
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #register {
+      background-color: #11035f;
+    }
+
     .response-area {
       margin-top: 20px;
       background-color: white;
@@ -53,7 +62,11 @@
   <button id="basicAuth" onclick="window.location.href='/basicAuth'">Basic Auth</button>
   <button id="apiKey" onclick="window.location.href='/apiKey'">API Key</button>
   <button id="bearerToken" onclick="window.location.href='/bearerToken'">Bearer Token</button>
-
+  <form action="/register" method="post">
+    <input type="text" name="username" placeholder="username" required>
+    <input type="text" name="password" placeholder="password" required>
+    <button id="register">Register</button>
+  </form>
   <div class="response-area">
     <p>
       <%=content%>
