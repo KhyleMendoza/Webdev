@@ -3,7 +3,7 @@ import axios from "axios";
 
 const app = express();
 const port = 3000;
-const API_URL = "https://secrets-api.appbrewery.com/";
+const API_URL = "https://secrets-api.appbrewery.com";
 
 const yourUsername = "khyle";
 const yourPassword = "khyle";
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.get("/noAuth", async (req, res) => {
   try {
-    const result = await axios.get(`${API_URL}random`);
+    const result = await axios.get(`${API_URL}/random`);
     res.render("index.ejs", { content: JSON.stringify(result.data) }) ;
   } catch (error) {
     res.status(404).send(error.message);
@@ -27,7 +27,7 @@ app.get("/noAuth", async (req, res) => {
 
 app.get("/basicAuth", async (req, res) => {
   try {
-    const response = await axios.get(`${API_URL}all?page=2`, {
+    const response = await axios.get(`${API_URL}/all?page=2`, {
     auth: {
       username: yourUsername,
       password: yourPassword,
@@ -41,7 +41,7 @@ app.get("/basicAuth", async (req, res) => {
 
 app.get("/apiKey", async (req, res) => {
   try {
-    const response = await axios.get(`${API_URL}filter?score=5&apiKey=${yourAPIKey}`);
+    const response = await axios.get(`${API_URL}/filter?score=5&apiKey=${yourAPIKey}`);
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
     res.status(404).send(error.message);
@@ -50,7 +50,7 @@ app.get("/apiKey", async (req, res) => {
 
 app.get("/bearerToken", async (req, res) => {
   try {
-    const response = await axios.get(`${API_URL}secrets/42`, {
+    const response = await axios.get(`${API_URL}/secrets/42`, {
         headers: {
           Authorization: `Bearer ${yourBearerToken}`
         }
@@ -64,7 +64,7 @@ app.get("/bearerToken", async (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     // console.log(req.body)
-    const response = await axios.post(`${API_URL}register`, {
+    const response = await axios.post(`${API_URL}/register`, {
       "username": req.body.username,
       "password": req.body.password
     })
