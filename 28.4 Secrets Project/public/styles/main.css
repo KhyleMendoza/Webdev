@@ -115,3 +115,12 @@ a {
   font-size: 24px;
   font-family: "Titan One", cursive;
 }
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #2f00ff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
