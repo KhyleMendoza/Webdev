@@ -71,7 +71,7 @@ app.post("/register", async (req, res) => {
     
     res.render("index.ejs", {content: JSON.stringify(response.data) })
   } catch (error) {
-    res.render("index.ejs", {content: JSON.stringify(error.response.data) })
+    res.render("index.ejs", {content: JSON.stringify(error.response?.data || error.message) })
   }
 })
 
