@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <img class="pokeball" src="img/pokeball.png" alt="pokeball">
+        <h1>POKÉDEX</h1>
+    </nav>
+
+    <div class="container">
+        <div class="search">
+            <form action="/pokemon" method="post">
+                <input type="text" name="pokemon" placeholder="Search Pokémon..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <% if (locals.pokemon) {
+            const statMeta = {
+                hp: { label: 'HP', color: 'var(--stat-hp)' },
+                attack: { label: 'Attack', color: 'var(--stat-atk)' },
+                defense: { label: 'Defense', color: 'var(--stat-def)' },
+                'special-attack': { label: 'Special Attack', color: 'var(--stat-spa)' },
+                'special-defense': { label: 'Special Defense', color: 'var(--stat-spd)' },
+                speed: { label: 'Speed', color: 'var(--stat-spe)' }
+            };
+            const dexNumber = String(pokemon.id).padStart(3, '0');
+        %>
+            <div class="result">
+                <div class="card">
+                    <div class="pokemon-img">
+                        <div class="sprite-block">
+                            <span class="sprite-tag normal">Normal</span>
+                            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %> front">
+                            <img src="<%= pokemon.sprites.back_default %>" alt="<%= pokemon.name %> back">
+                        </div>
+                        <div class="sprite-block">
+                            <span class="sprite-tag shiny">Shiny</span>
+                            <img src="<%= pokemon.sprites.front_shiny %>" alt="<%= pokemon.name %> shiny front">
+                            <img src="<%= pokemon.sprites.back_shiny %>" alt="<%= pokemon.name %> shiny back">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2><%= pokemon.name %></h2>
+                        <span class="dex-id">#<%= dexNumber %></span>
+
+                        <hr class="info-divider">
+
+                        <div class="info-row">
+                            <span class="label">Type:</span>
+                            <span class="value">
+                                <% pokemon.types.forEach(t => { %>
+                                    <span class="type-badge type-<%= t.type.name %>"><%= t.type.name %></span>
+                                <% }) %>
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="label">Height:</span>
+                            <span class="value"><%= (pokemon.height / 10).toFixed(1) %> m</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="label">Weight:</span>
+                            <span class="value"><%= (pokemon.weight / 10).toFixed(1) %> kg</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="label">Base Experience:</span>
+                            <span class="value"><%= pokemon.base_experience %></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panels">
+                    <div class="panel">
+                        <div class="panel-title">Stats</div>
+                        <% pokemon.stats.forEach(s => {
+                            const meta = statMeta[s.stat.name] || { label: s.stat.name, color: 'var(--stat-hp)' };
+                            const pct = Math.min(100, (s.base_stat / 150) * 100);
+                        %>
+                            <div class="stat-row">
+                                <span class="stat-name"><%= meta.label %></span>
+                                <span class="stat-bar">
+                                    <span class="stat-bar-fill" style="width: <%= pct %>%; background-color: <%= meta.color %>;"></span>
+                                </span>
+                                <span class="stat-value"><%= s.base_stat %></span>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-title">Abilities</div>
+                        <% pokemon.abilities.forEach(a => { %>
+                            <div class="ability">
+                                <span><%= a.ability.name.replace('-', ' ') %></span>
+                                <span class="ability-badge <%= a.is_hidden ? 'hidden' : '' %>">
+                                    <%= a.is_hidden ? 'Hidden' : 'Normal' %>
+                                </span>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <img class="pokeball-icon" src="img/pokeball.png" alt="pokeball">
+                    <div>
+                        <h3><%= pokemon.name %></h3>
+                        <p><%= (locals.description || 'No description available.').replace(/\f|\n/g, ' ') %></p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>&copy; <%= new Date().getFullYear() %> · Made by Khyle</footer>
+</body>
+</html>
