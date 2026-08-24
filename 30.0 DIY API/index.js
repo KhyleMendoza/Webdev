@@ -35,6 +35,21 @@ app.get("/filter", (req, res) => {
   res.json(filteredJoke)
 })
 
+app.get("/filtera", (req, res) => {
+  let type = req.query.type;
+  let id = req.query.id;
+  let filteredJoke = jokes;
+
+  if (type) {
+    filteredJoke = filteredJoke.filter(joke => joke.jokeType === type);
+  }
+
+  if (id) {
+    filteredJoke = filteredJoke.filter(joke => joke.id === Number(id))
+  }
+
+  res.json(filteredJoke.length > 0 ? filteredJoke : "No data found")
+})
 //4. POST a new joke
 
 //5. PUT a joke
