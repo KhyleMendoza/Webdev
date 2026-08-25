@@ -50,7 +50,18 @@ app.get("/filtera", (req, res) => {
 
   res.json(filteredJoke.length > 0 ? filteredJoke : "No data found")
 })
-//4. POST a new joke
+
+app.post("/jokes", (req, res) => {
+  let newJoke = {
+    id: jokes.length + 1,
+    JokeText: req.body.text,
+    jokeType: req.body.type
+  }
+
+  jokes.push(newJoke);
+  console.log(jokes.slice(-1));
+  res.json(newJoke);
+});
 
 //5. PUT a joke
 
