@@ -113,7 +113,7 @@ app.delete("/all", (req, res) => {
     console.log(jokes)
     res.status(200).json("Successfully deleted all jokes");
   } else {
-    res.status(400).json("You are not authorized to make this action.");
+    res.status(404).json("You are not authorized to make this action.");
   }
 })
 //8. DELETE All jokes
