@@ -1,3 +1,4 @@
+
 import express from "express";
 import bodyParser from "body-parser";
 
@@ -14,17 +15,6 @@ app.get("/random", (req, res) => {
 
 app.get("/jokes/:id", (req, res) => {
   let id = parseInt(req.params.id);
-  // //v 1
-  // let foundJoke;
-  // for (const joke of jokes) {
-  //   if (joke.id === id) {
-  //     foundJoke = joke;
-  //     break;
-  //   }
-  // }
-  // // v2
-  // let foundJoke = jokes.filter(joke => joke.id === id).shift();
-  // v3
   let foundJoke = jokes.find((joke) => joke.id === id);
   res.json(foundJoke)
 });
@@ -74,7 +64,6 @@ app.put("/jokes/:id", (req, res) => {
   const jokeIndex = jokes.findIndex((joke) => joke.id === id);
 
   jokes[jokeIndex] = replaceJoke;
-  // console.log(jokes)
   res.json(replaceJoke);
 })
 
@@ -88,7 +77,6 @@ app.patch("/jokes/:id", (req, res) => {
   };
 
   const jokeIndex = jokes.findIndex((joke) => joke.id === id);
-  console.log(jokeIndex)
   jokes[jokeIndex] = replaceJoke;
   console.log(jokes[jokeIndex]);
   res.json(replaceJoke);
@@ -107,7 +95,6 @@ app.delete("/jokes/:id", (req, res) => {
 
 app.delete("/all", (req, res) => {
   const userKey = req.query.apiKey;
-  // console.log(userKey)
   if (userKey === masterKey) {
     jokes = [];
     console.log(jokes)
