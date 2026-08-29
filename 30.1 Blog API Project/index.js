@@ -46,6 +46,19 @@ app.get("/posts/:id", (req, res) => {
   res.json(post);
 })
 
+app.post("/posts", (req, res) => {
+  const data = {
+    id: ++lastId,
+    title: req.body.title,
+    content: req.body.content,
+    author: req.body.author,
+    date: new Date().toISOString(),
+  }
+  posts.push(data)
+  console.log(posts)
+  res.json(data)
+})
+
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
