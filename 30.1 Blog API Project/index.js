@@ -59,6 +59,27 @@ app.post("/posts", (req, res) => {
   res.json(data)
 })
 
+app.patch("/posts/:id", (req, res) => {
+  const postId = parseInt(req.params.id);
+  const oldPost = posts.find(post => post.id === postId);
+  
+  if(!oldPost) {
+    return res.status(404).json({ message: "Post not Found"})
+  }
+
+  const newPost = {
+    id: postId,
+    title: req.body.title || oldPost.title,
+    content: req.body.content || oldPost.content,
+    author: req.body.author || oldPost.author,
+    date: new Date().toISOString(),
+  }
+  const postIndex = posts.findIndex(post => post.id === postId)
+  posts[postIndex] = newPost;
+  console.log(posts[postIndex]);
+  res.json(newPost);
+})
+
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
