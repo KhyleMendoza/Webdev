@@ -40,6 +40,12 @@ app.get("/posts", (req, res) => {
   res.json(posts);
 })
 
+app.get("/posts/:id", (req, res) => {
+  const postId = parseInt(req.params.id);
+  const post = posts.find(post => post.id === postId);
+  res.json(post);
+})
+
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
