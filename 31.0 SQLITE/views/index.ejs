@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL LITE</title>
+    <title>SQLITE</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <form action="/filter" method="post">
-        <input type="text" name="productName" placeholder="Search product...">
-        <button>Search</button>
-    </form>
+    <div class="top">
+        <form action="/filter" method="post">
+            <input type="text" name="productName" placeholder="Search product...">
+            <button>Search</button>
+        </form>
+
+        <a class="AddProductbtn" href="/new">Add Product</a>
+    </div>
+
     <% if (locals.products) { %>
         <h1>Product Table</h1>
         <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th colspan="2">Actions</th>
-            </tr>
-            <% products.forEach((product) => {%>
+            <thead>
                 <tr>
-                    <td><%= product.id %></td>
-                    <td><%= product.name %></td>
-                    <td><%= product.price %></td>
-                    <td><a href="/edit/<%= product.id %>">Edit</a></td>
-                    <td><a href="/delete/<%= product.id %>">Delete</a></td>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
                 </tr>
-            <% }); %>
+            </thead>
+
+            <tbody>
+                <% products.forEach((product) => { %>
+                    <tr>
+                        <td><%= product.id %></td>
+                        <td><%= product.name %></td>
+                        <td>₱<%= product.price.toFixed(2) %></td>
+                        <td>
+                            <div class="actions">
+                                <a class="edit" href="/edit/<%= product.id %>">Edit</a>
+                                <a class="delete" href="/delete/<%= product.id %>">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
         </table>
     <% } else { %>
         <p>No data Found</p>

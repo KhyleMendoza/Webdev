@@ -42,6 +42,21 @@ app.post("/filter", (req, res) => {
     res.render("index.ejs", { products: products})
 })
 
+app.get("/new", (req, res) => {
+    res.render("modify.ejs", {
+        heading: "Add New Product",
+        action: "Create Product"
+    });
+})
+
+app.post("/add/product", (req, res) => {
+    const productName = req.body.productName;
+    const productPrice = req.body.productPrice;
+
+    insertProduct.run(productName, productPrice);
+    res.redirect("/");
+})
+
 app.get("/edit/:id", (req, res) => {
     const productId = req.params.id;
     
@@ -64,7 +79,7 @@ app.post("/edit/:id", (req, res) => {
     db.prepare(`
         UPDATE products
         set name = ?, price = ?
-        WHERE id = ?    
+        WHERE id = ?
     `).run(productName, productPrice, productId)
 
     res.redirect("/")
