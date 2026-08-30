@@ -1,0 +1,37 @@
+import express from "express";
+import Database from "better-sqlite3";
+
+const app = express();
+const port = 3000;
+
+const db = new Database("products.db")
+db.prepare("DROP TABLE IF EXISTS products").run();
+
+db.prepare (`
+    CREATE TABLE IF NOT EXISTS products (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        price REAL
+    )
+`).run();
+
+const insertProduct = db.prepare(`
+    INSERT INTO products (name, price)
+    VALUES (?, ?)    
+`)
+
+insertProduct.run("Apple", 50.50);
+insertProduct.run("Orange", 30.50);
+insertProduct.run("Pineapple", 20.50);
+
+const products = db.prepare("SELECT * FROM products").all();
+
+console.log(products)
+
+app.get("/", (req, res) => {
+    res.render("index.ejs", {products: products})
+})
+
+app.listen(port, () => {
+    console.log(`Server is running at port: ${port}.`)
+})
