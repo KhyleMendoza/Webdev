@@ -85,6 +85,15 @@ app.post("/edit/:id", (req, res) => {
     res.redirect("/")
 })
 
+app.post("/delete/:id", (req, res) => {
+    const productId = req.params.id;
+    db.prepare(`
+        DELETE FROM products
+        WHERE id = ?    
+    `).run(productId);
+    res.redirect("/");
+})
+
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}.`)
 })

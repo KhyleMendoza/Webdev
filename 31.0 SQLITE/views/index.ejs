@@ -37,7 +37,9 @@
                         <td>
                             <div class="actions">
                                 <a class="edit" href="/edit/<%= product.id %>">Edit</a>
-                                <a class="delete" href="/delete/<%= product.id %>">Delete</a>
+                                <form action="/delete/<%= product.id %>" method="post">
+                                    <button class="delete" type="submit">Delete</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
