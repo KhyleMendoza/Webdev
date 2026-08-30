@@ -4,7 +4,8 @@ import Database from "better-sqlite3";
 const app = express();
 const port = 3000;
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 const db = new Database("products.db")
 db.prepare("DROP TABLE IF EXISTS products").run();
@@ -39,6 +40,34 @@ app.post("/filter", (req, res) => {
     `).all(`%${productName}%`);
 
     res.render("index.ejs", { products: products})
+})
+
+app.get("/edit/:id", (req, res) => {
+    const productId = req.params.id;
+    
+    const product = db.prepare(`
+        SELECT * FROM products
+        WHERE id = ?
+    `).get(productId);
+
+    res.render("modify.ejs", {
+        heading: "Edit Product",
+        action: "Update Product",
+        product: product
+    })
+})
+
+app.post("/edit/:id", (req, res) => {
+    const productId = req.params.id;
+    const productName = req.body.productName;
+    const productPrice = req.body.productPrice;
+    db.prepare(`
+        UPDATE products
+        set name = ?, price = ?
+        WHERE id = ?    
+    `).run(productName, productPrice, productId)
+
+    res.redirect("/")
 })
 
 app.listen(port, () => {
