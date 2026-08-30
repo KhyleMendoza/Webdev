@@ -6,6 +6,10 @@
     <title>SQL LITE</title>
 </head>
 <body>
+    <form action="/filter" method="post">
+        <input type="text" name="productName" placeholder="Search product...">
+        <button>Search</button>
+    </form>
     <% if (locals.products) { %>
         <h1>Product Table</h1>
         <table>

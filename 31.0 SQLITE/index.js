@@ -4,6 +4,8 @@ import Database from "better-sqlite3";
 const app = express();
 const port = 3000;
 
+app.use(express.urlencoded({ extended: true }))
+
 const db = new Database("products.db")
 db.prepare("DROP TABLE IF EXISTS products").run();
 
@@ -24,12 +26,19 @@ insertProduct.run("Apple", 50.50);
 insertProduct.run("Orange", 30.50);
 insertProduct.run("Pineapple", 20.50);
 
-const products = db.prepare("SELECT * FROM products").all();
-
-console.log(products)
-
 app.get("/", (req, res) => {
-    res.render("index.ejs", {products: products})
+    const products = db.prepare("SELECT * FROM products").all();
+    console.log(products)
+    res.render("index.ejs", { products: products})
+})
+
+app.post("/filter", (req, res) => {
+    const productName = req.body.productName;
+    const products = db.prepare(`
+        SELECT * FROM products WHERE name LIKE ?   
+    `).all(`%${productName}%`);
+
+    res.render("index.ejs", { products: products})
 })
 
 app.listen(port, () => {
