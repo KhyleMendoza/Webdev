@@ -35,9 +35,15 @@ app.get("/", (req, res) => {
 
 app.post("/filter", (req, res) => {
     const productName = req.body.productName;
+    const minPrice = req.body.minPrice;
+    const maxPrice = req.body.maxPrice;
+    
     const products = db.prepare(`
-        SELECT * FROM products WHERE name LIKE ?   
-    `).all(`%${productName}%`);
+        SELECT * FROM products
+        WHERE name LIKE ?
+        AND price >= ?
+        AND price <= ?
+    `).all(`%${productName}%`, minPrice || 0, maxPrice || 999999);
 
     res.render("index.ejs", { products: products})
 })
