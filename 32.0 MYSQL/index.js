@@ -62,6 +62,40 @@ app.post("/add/product", async (req, res) => {
     }
 });
 
+app.get("/edit/:id", async (req, res) => {
+    try {
+        const productId = req.params.id;
+        const [products] = await db.query(
+            "SELECT * FROM products WHERE id = ?",
+            [productId]
+        );
+        res.render("modify.ejs", {
+            heading: "Edit Product",
+            action: "Update Product",
+            product: products[0]
+        })
+    } catch (error) {
+        console.error("Database error:", error);
+        res.status(500).send("Database error"); 
+    }
+})
+
+app.post("/edit/:id", async (req, res) => {
+    try {
+        const productId = req.params.id;
+        const productName = req.body.productName;
+        const productPrice = req.body.productPrice;
+        await db.query(
+            "UPDATE products SET name = ?, price = ? WHERE id = ?",
+            [productName, productPrice, productId]
+        );
+        res.redirect("/");
+    } catch (error) {
+        console.error("Database error:", error);
+        res.status(500).send("Database error"); 
+    }
+})
+
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}.`);
 });
