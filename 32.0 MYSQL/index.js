@@ -38,6 +38,26 @@ app.post("/filter", async (req, res) => {
     }
 });
 
+app.get("/new", (req, res) => {
+    res.render("modify.ejs", {
+        heading: "Add Product",
+        action: "Create Product"
+    });
+})
+
+app.post("/add/product", async (req, res) => {
+    try {
+        const productName = req.body.productName;
+        const productPrice = req.body.productPrice;
+
+        const products = await db.query("INSERT into products (name, price) VALUES (?, ?)", [productName, productPrice])
+        res.redirect("/");
+    } catch (error) {
+        console.error("Database error:", error);
+        res.status(500).send("Database error"); 
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}.`);
 });
