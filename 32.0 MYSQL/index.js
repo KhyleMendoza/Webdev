@@ -96,6 +96,20 @@ app.post("/edit/:id", async (req, res) => {
     }
 })
 
+app.post("/delete/:id", async (req, res) => {
+    try {
+        const productId = req.params.id;
+        await db.query(
+            "DELETE FROM products WHERE id = ?",
+            [productId]
+        );
+        res.redirect("/");
+    } catch (error) {
+        console.error("Database error:", error);
+        res.status(500).send("Database error"); 
+    }
+})
+
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}.`);
 });
