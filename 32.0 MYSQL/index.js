@@ -50,7 +50,11 @@ app.post("/add/product", async (req, res) => {
         const productName = req.body.productName;
         const productPrice = req.body.productPrice;
 
-        const products = await db.query("INSERT into products (name, price) VALUES (?, ?)", [productName, productPrice])
+        await db.query(
+            "INSERT into products (name, price) VALUES (?, ?)",
+            [productName, productPrice]
+        )
+
         res.redirect("/");
     } catch (error) {
         console.error("Database error:", error);
