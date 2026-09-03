@@ -9,7 +9,14 @@
 
     <h1>Products</h1>
 
-    <a href="/new">Add New Product</a>
+    <a href="/new">Add Product</a>
+
+    <div class="search">
+        <form action="/filter" method="post">
+            <input type="text" name="productName" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
 
     <table>
         <thead>

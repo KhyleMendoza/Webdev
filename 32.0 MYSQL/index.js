@@ -27,6 +27,17 @@ app.get("/", async (req, res) => {
     }
 });
 
+app.post("/filter", async (req, res) => {
+    try {
+        const productName = req.body.productName;
+        const [products] = await db.query("SELECT * FROM products WHERE name LIKE ?", [`%${productName}%`]);
+        res.render("index.ejs", { products: products })
+    } catch (error) {
+        console.error("Database error:", error);
+        res.status(500).send("Database error"); 
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}.`);
 });
