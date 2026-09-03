@@ -30,7 +30,20 @@ app.get("/", async (req, res) => {
 app.post("/filter", async (req, res) => {
     try {
         const productName = req.body.productName;
-        const [products] = await db.query("SELECT * FROM products WHERE name LIKE ?", [`%${productName}%`]);
+        const minPrice = req.body.minPrice;
+        const maxPrice = req.body.maxPrice;
+        const [products] = await db.query(`
+            SELECT * FROM products
+            WHERE name LIKE ?
+            AND price >= ?
+            AND price <= ?
+            `,
+            [
+                `%${productName}%`,
+                minPrice || 0,
+                maxPrice || 999999
+            ]
+        );
         res.render("index.ejs", { products: products })
     } catch (error) {
         console.error("Database error:", error);
