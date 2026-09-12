@@ -20,6 +20,8 @@ const db = new pg.Client({
 db.connect();
 
 let data = []
+let topRiceProducer = {};
+let topWheatProducer = {};
 
 db.query("SELECT * FROM world_food", (err, res) => {
     if (err) {
@@ -27,18 +29,47 @@ db.query("SELECT * FROM world_food", (err, res) => {
     } else {
         data = res.rows;
     }
-
 })
 
+db.query(
+    "SELECT * FROM world_food ORDER BY rice_production DESC LIMIT 1",
+    (err, res) => {
+        if (err) {
+            console.error("Error executing query", err.stack);
+        } else {
+            topRiceProducer = res.rows[0];
+        }
+    }
+);
+
+db.query(
+    "SELECT * FROM world_food ORDER BY wheat_production DESC LIMIT 1",
+    (err, res) => {
+        if (err) {
+            console.error("Error executing query", err.stack);
+        } else {
+            topWheatProducer = res.rows[0];
+        }
+    }
+);
+
 app.get("/", (req, res) => {
-    res.render("index.ejs", {data: data});
+    res.render("index.ejs", {
+        data: data,
+        topRiceProducer: topRiceProducer,
+        topWheatProducer: topWheatProducer
+    });
 });
 
 app.get("/filter", (req, res) => {
     const country = req.query.country;
 
     if (!country) {
-        res.render("index.ejs", {data});
+        res.render("index.ejs", {
+            data,
+            topRiceProducer: topRiceProducer,
+            topWheatProducer: topWheatProducer
+        });
         return;
     }
 
@@ -49,7 +80,11 @@ app.get("/filter", (req, res) => {
             if (err) {
                 console.error("Error executing query", err.stack);
             } else {
-                res.render("index.ejs", {data: result.rows})
+                res.render("index.ejs", {
+                    data: result.rows,
+                    topRiceProducer: topRiceProducer,
+                    topWheatProducer: topWheatProducer
+                })
             }
         }
     )
