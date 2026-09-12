@@ -11,10 +11,36 @@
         <input type="text" name="country" placeholder="Search Country...">
         <button type="submit">Search</button>
     </form>
+    <hr>
+    
+    <h2>Production Overview</h2>
+    <div>
+        <div>
+            <h3>Countries</h3>
+            <p><%= data.length %></p>
+        </div>
+
+        <div>
+            <h3>Total Rice Production</h3>
+            <p>
+                <%= data.reduce((total, item) => total + Number(item.rice_production), 0).toFixed(2) %>
+            </p>
+        </div>
+
+        <div>
+            <h3>Total Wheat Production</h3>
+            <p>
+                <%= data.reduce((total, item) => total + Number(item.wheat_production), 0).toFixed(2) %>
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <h2>Country Data</h2>
     <table>
         <thead>
             <tr>
-                <th>ID</td>
+                <th>ID</th>
                 <th>Country</th>
                 <th>Rice Production</th>
                 <th>Wheat Production</th>
