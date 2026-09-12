@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>World Food Data</h1>
+    <form action="/filter" method="GET">
+        <input type="text" name="country" placeholder="Search Country...">
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</td>
+                <th>Country</th>
+                <th>Rice Production</th>
+                <th>Wheat Production</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% data.forEach((item) => { %>
+                <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.country %></td>
+                    <td><%= item.rice_production %></td>
+                    <td><%= item.wheat_production %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
